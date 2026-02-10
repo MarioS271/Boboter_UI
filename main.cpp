@@ -1,7 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include <QIcon>
 #include <QPalette>
 
 #include "constants.h"
@@ -19,8 +18,6 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
     engine.rootContext()->setContextProperty("appVersion", versionString);
     engine.loadFromModule("Boboter_UI", "Main");
-
-    app.setWindowIcon(QIcon("images/logo.png"));
 
     QPalette palette = app.palette();
     palette.setColor(QPalette::Text, Colors::textColor);
