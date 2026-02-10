@@ -14,9 +14,20 @@ qt_add_executable(appBoboter_UI
 
 qt_add_qml_module(appBoboter_UI
     URI Boboter_UI
+
     QML_FILES
         Main.qml
+        CustomTabButton.qml
+        colors.qml
+
+    SOURCES
+        constants.h
+
+    RESOURCES
+        images/logo.png
 )
+
+set_source_files_properties(colors.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
