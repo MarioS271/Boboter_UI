@@ -9,13 +9,15 @@ ApplicationWindow {
     title: qsTr("Boboter UI")
 
     header: RowLayout {
+        spacing: 15
+
         Image {
             source: "images/logo.png"
             fillMode: Image.PreserveAspectFit
 
             Layout.preferredWidth: 48
             Layout.preferredHeight: 48
-            Layout.leftMargin: 10
+            Layout.leftMargin: 15
         }
 
         Text {
