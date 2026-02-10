@@ -3,10 +3,13 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 2.15
 
 ApplicationWindow {
-    width: 1280
+    width: 1080
     height: 720
     visible: true
     title: qsTr("Boboter UI")
+
+    minimumWidth: 950
+    minimumHeight: 600
 
     header: Rectangle {
         color: "transparent"
@@ -21,6 +24,7 @@ ApplicationWindow {
 
         RowLayout {
             anchors.fill: parent
+            implicitHeight: 50
             spacing: 15
 
             Image {
@@ -38,6 +42,15 @@ ApplicationWindow {
                 font.bold: true
 
                 Layout.alignment: Qt.AlignLeft
+                Layout.topMargin: -5
+            }
+            Text {
+                text: "v" + appVersion
+                color: "#c0c0c0"
+                font.pixelSize: 10
+
+                Layout.alignment: Qt.AlignLeft
+                Layout.leftMargin: -4
                 Layout.rightMargin: 50
             }
 
