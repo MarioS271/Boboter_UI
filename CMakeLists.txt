@@ -18,13 +18,17 @@ qt_add_qml_module(appBoboter_UI
     QML_FILES
         Main.qml
         CustomTabButton.qml
-        colors.qml
+
 
     SOURCES
         constants.h
 
     RESOURCES
         images/logo.png
+        QML_FILES StatusPage.qml
+        QML_FILES ControlsPage.qml
+        QML_FILES SensorsPage.qml
+        QML_FILES SettingsPage.qml
 )
 
 set_source_files_properties(colors.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)

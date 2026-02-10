@@ -8,73 +8,62 @@ ApplicationWindow {
     visible: true
     title: qsTr("Boboter UI")
 
-    header: RowLayout {
-        spacing: 15
+    header: Rectangle {
+        color: "transparent"
+        implicitHeight: 50
 
-        Image {
-            source: "images/logo.png"
-            fillMode: Image.PreserveAspectFit
-
-            Layout.preferredWidth: 48
-            Layout.preferredHeight: 48
-            Layout.leftMargin: 15
+        Rectangle {
+            anchors.bottom: parent.bottom
+            width: parent.width
+            height: 1
+            color: "#333333"
         }
 
-        Text {
-            text: "Boboter UI v" + appVersion
-            color: colors.text
-            font.pixelSize: 24
+        RowLayout {
+            anchors.fill: parent
+            spacing: 15
 
-            Layout.alignment: Qt.AlignLeft
-        }
+            Image {
+                source: "images/logo.png"
+                fillMode: Image.PreserveAspectFit
+                Layout.preferredWidth: 32
+                Layout.preferredHeight: 32
+                Layout.leftMargin: 15
+            }
 
-        TabBar {
-            id: tabBar
-            Layout.fillWidth: true
-            currentIndex: stackLayout.currentIndex
+            Text {
+                text: "Boboter UI"
+                color: parent.palette.text
+                font.pixelSize: 24
+                font.bold: true
 
-            CustomTabButton { text: "Monitoring" }
-            CustomTabButton { text: "Control" }
-            CustomTabButton { text: "Settings" }
+                Layout.alignment: Qt.AlignLeft
+                Layout.rightMargin: 50
+            }
+
+            Item { Layout.fillWidth: true }
+
+            TabBar {
+                id: mainTabBar
+                currentIndex: mainStackLayout.currentIndex
+                Layout.rightMargin: 10
+
+                CustomTabButton { text: "Status" }
+                CustomTabButton { text: "Controls" }
+                CustomTabButton { text: "Sensors" }
+                CustomTabButton { text: "Settings" }
+            }
         }
     }
 
     StackLayout {
-        id: stackLayout
+        id: mainStackLayout
         anchors.fill: parent
-        currentIndex: tabBar.currentIndex
+        currentIndex: mainTabBar.currentIndex
 
-        // Page 1
-        Rectangle {
-            color: "transparent"
-
-            Text {
-                text: "Page 1"
-                color: colors.text
-                anchors.centerIn: parent
-            }
-        }
-
-        // Page 2
-        Rectangle {
-            color: "transparent"
-
-            Text {
-                text: "Page 2"
-                color: colors.text
-                anchors.centerIn: parent
-            }
-        }
-
-        // Page 3
-        Rectangle {
-            color: "transparent"
-
-            Text {
-                text: "Page 3"
-                color: colors.text
-                anchors.centerIn: parent
-            }
-        }
+        StatusPage {}
+        ControlsPage {}
+        SensorsPage {}
+        SettingsPage {}
     }
 }

@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QIcon>
+#include <QPalette>
 
 #include "constants.h"
 
@@ -19,7 +20,13 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("appVersion", versionString);
     engine.loadFromModule("Boboter_UI", "Main");
 
-    app.setWindowIcon(QIcon(":/images/logo.png"));
+    app.setWindowIcon(QIcon("images/logo.png"));
+
+    QPalette palette = app.palette();
+    palette.setColor(QPalette::Text, Colors::textColor);
+    palette.setColor(QPalette::Accent, Colors::accentColor);
+    palette.setColor(QPalette::ButtonText, Colors::accentColor);
+    app.setPalette(palette);
 
     return app.exec();
 }
