@@ -5,14 +5,14 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
-set(app_icon_resource_windows "icon.rc")
+set(app_icon_resource_windows "resources/icon.rc")
 if (WIN32)
     qt_add_executable(appBoboter_UI
-        main.cpp ${app_icon_resource_windows}
+        cpp/main.cpp ${app_icon_resource_windows}
     )
 else()
     qt_add_executable(appBoboter_UI
-        main.cpp
+        cpp/main.cpp
     )
 endif()
 
@@ -20,19 +20,39 @@ qt_add_qml_module(appBoboter_UI
     URI Boboter_UI
 
     QML_FILES
-        Main.qml
-        CustomTabButton.qml
-        StatusPage.qml
-        ControlsPage.qml
-        SensorsPage.qml
-        SettingsPage.qml
+        qml/Main.qml
+
+        qml/components/CustomTabButton.qml
+        qml/components/CustomSmallTabButton.qml
+
+        qml/pages/DashboardPage.qml
+
+        qml/pages/Controls/ControlsPage.qml
+        qml/pages/Controls/LEDSControlsSubpage.qml
+        qml/pages/Controls/BuzzerControlsSubpage.qml
+        qml/pages/Controls/MotorsControlsSubpage.qml
+        qml/pages/Controls/DriveEngineControlsSubpage.qml
+        qml/pages/Controls/LinefollowerControlsSubpage.qml
+
+        qml/pages/Sensors/SensorsPage.qml
+        qml/pages/Sensors/BatterySensorSubpage.qml
+        qml/pages/Sensors/UltrasonicSensorSubpage.qml
+        qml/pages/Sensors/EncodersSensorSubpage.qml
+        qml/pages/Sensors/BumpersSensorSubpage.qml
+        qml/pages/Sensors/ColorsensorSensorSubpage.qml
+        qml/pages/Sensors/LinefollowerSensorSubpage.qml
+        qml/pages/Sensors/IMUSensorSubpage.qml
+        qml/pages/Sensors/IOSensorSubpage.qml
+
+        qml/pages/Settings/SettingsPage.qml
 
     SOURCES
-        constants.h
+        cpp/constants.h
 
     RESOURCES
-        images/logo.png
-        images/logo.ico
+        resources/images/logo.png
+        resources/images/logo.ico
+        resources/images/outline.svg
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

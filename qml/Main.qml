@@ -1,3 +1,12 @@
+/*
+ * @file Main.qml
+ *
+ * @authors MarioS271
+ * @copyright AGPLv3 License
+ */
+
+import Boboter_UI
+
 import QtQuick
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 2.15
@@ -28,7 +37,7 @@ ApplicationWindow {
             spacing: 15
 
             Image {
-                source: "images/logo.png"
+                source: "qrc:/qt/qml/Boboter_UI/resources/images/logo.png"
                 fillMode: Image.PreserveAspectFit
                 Layout.preferredWidth: 32
                 Layout.preferredHeight: 32
@@ -74,7 +83,7 @@ ApplicationWindow {
         anchors.fill: parent
         currentIndex: mainTabBar.currentIndex
 
-        StatusPage {}
+        DashboardPage {}
         ControlsPage {}
         SensorsPage {}
         SettingsPage {}

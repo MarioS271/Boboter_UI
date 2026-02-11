@@ -1,9 +1,18 @@
+/*
+ * @file CustomSmallTabButton.qml
+ *
+ * @authors MarioS271
+ * @copyright AGPLv3 License
+ */
+
+import Boboter_UI
+
 import QtQuick
 import QtQuick.Controls 2.15
 
 TabButton {
     id: button
-    width: 150
+    width: 100
 
     font.bold: true
 

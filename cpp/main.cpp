@@ -1,3 +1,10 @@
+/*
+ * @file main.cpp
+ *
+ * @authors MarioS271
+ * @copyright AGPLv3 License
+ */
+
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
