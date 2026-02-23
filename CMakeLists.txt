@@ -28,10 +28,8 @@ qt_add_qml_module(appBoboter_UI
         qml/pages/DashboardPage.qml
 
         qml/pages/Controls/ControlsPage.qml
-        qml/pages/Controls/LEDSControlsSubpage.qml
-        qml/pages/Controls/BuzzerControlsSubpage.qml
-        qml/pages/Controls/MotorsControlsSubpage.qml
-        qml/pages/Controls/DriveEngineControlsSubpage.qml
+        qml/pages/Controls/LedsControlsSubpage.qml
+        qml/pages/Controls/DriveControlsSubpage.qml
         qml/pages/Controls/LinefollowerControlsSubpage.qml
 
         qml/pages/Sensors/SensorsPage.qml

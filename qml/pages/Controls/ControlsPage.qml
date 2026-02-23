@@ -34,10 +34,8 @@ Rectangle {
                     Layout.rightMargin: 10
                     Layout.leftMargin: 10
 
-                    CustomSmallTabButton { text: "LEDs" }
-                    CustomSmallTabButton { text: "Buzzer" }
-                    CustomSmallTabButton { text: "Motors" }
-                    CustomSmallTabButton { text: "Drive Engine" }
+                    CustomSmallTabButton { text: "RGB-LEDs" }
+                    CustomSmallTabButton { text: "Drive Controls" }
                     CustomSmallTabButton { text: "Linefollower" }
                 }
             }
@@ -58,10 +56,8 @@ Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            LEDSControlsSubpage {}
-            BuzzerControlsSubpage {}
-            MotorsControlsSubpage {}
-            DriveEngineControlsSubpage {}
+            LedsControlsSubpage {}
+            DriveControlsSubpage {}
             LinefollowerControlsSubpage {}
         }
     }

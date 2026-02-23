@@ -1,4 +1,4 @@
-/*
+/*a
  * @file LEDSControlSubpage.qml
  *
  * @authors MarioS271
@@ -10,6 +10,7 @@ import Boboter_UI
 import QtQuick
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 2.15
+import QtQuick.Effects
 
 Rectangle {
     color: "transparent"
@@ -28,13 +29,6 @@ Rectangle {
             Label {
                 text: "Modus Auswahl"
                 color: parent.palette.text
-                font.bold: true
-            }
-
-            Label {
-                text: "Modus Auswahl"
-                color: "#ffffff"
-                font.pixelSize: 18
                 font.bold: true
             }
         }
